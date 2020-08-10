@@ -1,5 +1,5 @@
 git clone https://github.com/Microsoft/vcpkg
-.\vcpkg\bootstrap-vcpkg.bat
+call .\vcpkg\bootstrap-vcpkg.bat
 
 .\vcpkg\vcpkg.exe install freetype
 .\vcpkg\vcpkg.exe install glew
