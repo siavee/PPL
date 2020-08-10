@@ -4,3 +4,8 @@ objects/
 ppl.pro.user
 lib/libppl.a
 lib/libppld.a
+
+vcpkg
+.qmake.stash
+lib/
+Makefile*

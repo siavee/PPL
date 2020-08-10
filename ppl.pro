@@ -31,7 +31,7 @@ macx {
 }
 
 win32 {
-    INCLUDEPATH += include/glew/include
+    INCLUDEPATH += vcpkg/installed/x64-windows/include
     DEFINES += APL=0 IBM=1 LIN=0
     #disable the deprecated warnings that make writing standards-compliant code impossible
     QMAKE_CXXFLAGS += -wd4996
@@ -94,9 +94,6 @@ SOURCES += \
     src/vertexbuffer.cpp
 
 withsound {
-    win32 {
-        INCLUDEPATH += include/openal-soft/include
-    }
     HEADERS += \
         src/alsoundbuffer.h \
         src/alcontextmanager.h \
@@ -109,7 +106,6 @@ withsound {
 
 withfreetype {
     win32 {
-        INCLUDEPATH += include/freetype2/include
         DEFINES+=FREETYPE2_STATIC
     }
     linux {
