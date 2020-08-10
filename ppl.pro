@@ -31,7 +31,7 @@ macx {
 }
 
 win32 {
-    INCLUDEPATH += vcpkg/installed/x64-windows/include
+    INCLUDEPATH += vcpkg/installed/x64-windows-static/include
     DEFINES += APL=0 IBM=1 LIN=0
     #disable the deprecated warnings that make writing standards-compliant code impossible
     QMAKE_CXXFLAGS += -wd4996
