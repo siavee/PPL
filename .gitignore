@@ -9,3 +9,5 @@ vcpkg
 .qmake.stash
 lib/
 Makefile*
+
+.DS_Store

@@ -20,6 +20,7 @@ DESTDIR = lib
 TARGET = ppl
 
 macx {
+    INCLUDEPATH += vcpkg/installed/x64-osx/include
     DEFINES += APL=1 IBM=0 LIN=0
     QMAKE_CXXFLAGS += -Wextra -Wfloat-equal -pedantic
 
@@ -41,6 +42,7 @@ win32 {
 }
 
 linux {
+    INCLUDEPATH += vcpkg/installed/x64-linux/include
     DEFINES += APL=0 IBM=0 LIN=1
     QMAKE_CXXFLAGS += -Wextra -Wfloat-equal -Wno-c++11-narrowing -pedantic
     QMAKE_CXXFLAGS += -fvisibility=hidden
