@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script is developed and tested on macOS Catalina 10.15.4
+# This script is developed and tested on PopOS 20.04 LTS
 # using Qmake from Qt 5.15.0
 
 declare -i errcount=0
@@ -16,12 +16,8 @@ then
     exit 1
 fi
 
-# brew requirement
-if ! command -v brew &> /dev/null
-then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    brew install gcc
-fi
+# dependencies
+sudo apt update && sudo apt install build-essential tar curl zip unzip -y
 
 # vcpkg requirement
 if [ ! -d "./vcpkg" ] 
@@ -34,10 +30,10 @@ then
 fi
 
 # install dependencies
-./vcpkg/vcpkg install freetype:x64-osx
-./vcpkg/vcpkg install glew:x64-osx
-./vcpkg/vcpkg install openal-soft:x64-osx
-./vcpkg/vcpkg install simpleini:x64-osx
+./vcpkg/vcpkg install freetype:x64-linux
+./vcpkg/vcpkg install glew:x64-linux
+./vcpkg/vcpkg install openal-soft:x64-linux
+./vcpkg/vcpkg install simpleini:x64-linux
 
 if [ $errcount -gt 0 ]; then
 	echo "$errcount errors were detected, please review that everything is setup correctly"
