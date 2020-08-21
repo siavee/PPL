@@ -1,9 +1,5 @@
-if not exist .\vcpkg (
-	git clone https://github.com/Microsoft/vcpkg
-)
-if not exist .\vcpkg\vcpkg.exe (
-	call .\vcpkg\bootstrap-vcpkg.bat
-)
+REM always start fresh
+del /f/q/s .\vcpkg > NUL
 
 .\vcpkg\vcpkg.exe install freetype:x64-windows-static
 .\vcpkg\vcpkg.exe install glew:x64-windows-static

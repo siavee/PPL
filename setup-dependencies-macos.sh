@@ -23,15 +23,10 @@ then
     brew install gcc
 fi
 
-# vcpkg requirement
-if [ ! -d "./vcpkg" ] 
-then
-	git clone https://github.com/Microsoft/vcpkg    
-fi
-if ! command -v ./vcpkg/vcpkg &> /dev/null
-then
-    ./vcpkg/bootstrap-vcpkg.sh
-fi
+# always refresh vcpkg so we can be sure that we're not using stale configuration
+rm -rf ./vcpkg
+git clone https://github.com/Microsoft/vcpkg
+./vcpkg/bootstrap-vcpkg.sh
 
 # install dependencies
 ./vcpkg/vcpkg install glew:x64-osx
