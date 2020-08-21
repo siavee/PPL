@@ -34,7 +34,6 @@ then
 fi
 
 # install dependencies
-./vcpkg/vcpkg install freetype:x64-osx
 ./vcpkg/vcpkg install glew:x64-osx
 ./vcpkg/vcpkg install openal-soft:x64-osx
 ./vcpkg/vcpkg install simpleini:x64-osx

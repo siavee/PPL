@@ -30,7 +30,6 @@ then
 fi
 
 # install dependencies
-./vcpkg/vcpkg install freetype:x64-linux
 ./vcpkg/vcpkg install glew:x64-linux
 ./vcpkg/vcpkg install openal-soft:x64-linux
 ./vcpkg/vcpkg install simpleini:x64-linux
