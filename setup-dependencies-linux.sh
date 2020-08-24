@@ -21,7 +21,7 @@ sudo apt update && sudo apt install build-essential tar curl zip unzip -y
 
 # always refresh vcpkg so we can be sure that we're not using stale configuration
 rm -rf ./vcpkg
-git clone https://github.com/Microsoft/vcpkg
+git clone https://github.com/siavee/vcpkg
 ./vcpkg/bootstrap-vcpkg.sh
 
 # install dependencies
