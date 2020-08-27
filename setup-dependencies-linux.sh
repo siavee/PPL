@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script is developed and tested on PopOS 20.04 LTS
+# This script is developed and tested on PopOS 20.04 LTS & Ubuntu 18.04 LTS
 # using Qmake from Qt 5.15.0
 
 declare -i errcount=0
@@ -17,7 +17,14 @@ then
 fi
 
 # dependencies
-sudo apt update && sudo apt install build-essential tar curl zip unzip -y
+PKG_DEPS='build-essential tar curl zip unzip pkg-config'
+if ! dpkg -s $PKG_DEPS >/dev/null 2>&1; then
+	if [[ $EUID -eq 0 ]]; then
+		apt update && apt install $PKG_DEPS -y
+	else
+	 	sudo apt update && sudo apt install $PKG_DEPS -y
+	fi
+fi
 
 # always refresh vcpkg so we can be sure that we're not using stale configuration
 rm -rf ./vcpkg
